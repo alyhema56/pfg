@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - Festival des Grouilleurs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">GROUILLEURS <span>·</span> FESTIVAL</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="galerie.html" class="active">Galerie</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" style="padding: 50px 24px;">
+        <p class="sous-titre">📸</p>
+        <h1>Notre <span>Galerie</span></h1>
+        <p>Photos et vidéos des éditions passées</p>
+    </section>
+
+    <main class="container">
+
+        <div class="card">
+            <h2>🎬 Vidéos</h2>
+            <div class="grid-2">
+                <div class="media-card">
+                    <video controls poster="images/poster.jpg">
+                        <source src="images/video1.mp4" type="video/mp4">
+                        Ton navigateur ne supporte pas la vidéo.
+                    </video>
+                    <div class="caption">Édition 2024 — Gaoua</div>
+                </div>
+                <div class="media-card">
+                    <video controls>
+                        <source src="images/video2.mp4" type="video/mp4">
+                        Ton navigateur ne supporte pas la vidéo.
+                    </video>
+                    <div class="caption">Temps forts du festival</div>
+                </div>
+            </div>
+            <p style="margin-top: 16px; opacity: 0.6; font-size: 0.9rem;">
+                💡 Pour ajouter une vidéo : remplace <code>images/video1.mp4</code> par le chemin de ta vidéo.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📷 Photos</h2>
+            <div class="grid-3">
+                <div class="media-card">
+                    <img src="images/photo1.jpg" alt="Festival des Grouilleurs">
+                    <div class="caption">Scène principale</div>
+                </div>
+                <div class="media-card">
+                    <img src="images/photo2.jpg" alt="Festival des Grouilleurs">
+                    <div class="caption">Public en liesse</div>
+                </div>
+                <div class="media-card">
+                    <img src="images/photo3.jpg" alt="Festival des Grouilleurs">
+                    <div class="caption">Artistes sur scène</div>
+                </div>
+                <div class="media-card">
+                    <img src="images/photo4.jpg" alt="Festival des Grouilleurs">
+                    <div class="caption">Danse traditionnelle</div>
+                </div>
+                <div class="media-card">
+                    <img src="images/photo5.jpg" alt="Festival des Grouilleurs">
+                    <div class="caption">Ambiance nocturne</div>
+                </div>
+                <div class="media-card">
+                    <img src="images/photo6.jpg" alt="Festival des Grouilleurs">
+                    <div class="caption">Édition 2024</div>
+                </div>
+            </div>
+            <p style="margin-top: 16px; opacity: 0.6; font-size: 0.9rem;">
+                💡 Pour ajouter une photo : dépose ton fichier dans le dossier <code>images/</code> et remplace <code>images/photo1.jpg</code>.
+            </p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="programme.html">Programme</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>&copy; 2026 <span class="highlight">Festival des Grouilleurs</span> — Gaoua, Burkina Faso</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

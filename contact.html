@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Festival des Grouilleurs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">GROUILLEURS <span>·</span> FESTIVAL</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" style="padding: 50px 24px;">
+        <p class="sous-titre">✉️</p>
+        <h1>Nous <span>contacter</span></h1>
+        <p>Une question ? Une envie de participer ? Écrivez-nous !</p>
+    </section>
+
+    <main class="container">
+
+        <div class="grid-2">
+            <div class="card">
+                <h2>📩 Envoyez-nous un message</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nom">Nom complet</label>
+                        <input type="text" id="nom" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Votre message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
+            </div>
+
+            <div>
+                <div class="card">
+                    <h2>📍 Nous trouver</h2>
+                    <p><strong>Gaoua</strong> — Place de la Nation</p>
+                    <p><strong>Batié</strong> — Lieu à venir</p>
+                    <p style="margin-top: 16px; opacity: 0.7;">
+                        📧 <a href="mailto:contact@grouilleurs.com" style="color: var(--orange-terreux-clair);">contact@grouilleurs.com</a>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2>📱 Suivez-nous</h2>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                        <a href="#" style="padding: 10px 20px; background: rgba(255,255,255,0.05); border-radius: 30px; transition: 0.3s;">Facebook</a>
+                        <a href="#" style="padding: 10px 20px; background: rgba(255,255,255,0.05); border-radius: 30px; transition: 0.3s;">Instagram</a>
+                        <a href="#" style="padding: 10px 20px; background: rgba(255,255,255,0.05); border-radius: 30px; transition: 0.3s;">YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="programme.html">Programme</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="a-propos.html">À propos</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>&copy; 2026 <span class="highlight">Festival des Grouilleurs</span> — Gaoua, Burkina Faso</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
