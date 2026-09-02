@@ -2,32 +2,45 @@
 // FESTIVAL DES GROUILLEURS - SCRIPT PRO
 // ============================================
 
-// ===== 1. MENU BURGER =====
+// ===== 1. MENU BURGER STYLE BARAKA =====
 const burger = document.querySelector('.burger');
 const navLinks = document.querySelector('.nav-links');
+const overlay = document.querySelector('.nav-overlay');
 
-if (burger) {
-    burger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        burger.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-    });
+function toggleMenu() {
+    navLinks.classList.toggle('active');
+    burger.classList.toggle('active');
+    if (overlay) {
+        overlay.classList.toggle('active');
+    }
+    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
 }
 
+if (burger) {
+    burger.addEventListener('click', toggleMenu);
+}
+
+// Fermer le menu en cliquant sur l'overlay
+if (overlay) {
+    overlay.addEventListener('click', toggleMenu);
+}
+
+// Fermer le menu en cliquant sur un lien
 document.querySelectorAll('.nav-links li a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
         burger.classList.remove('active');
+        if (overlay) {
+            overlay.classList.remove('active');
+        }
         document.body.style.overflow = '';
     });
 });
 
-document.addEventListener('click', (e) => {
-    const nav = document.querySelector('nav');
-    if (nav && !nav.contains(e.target) && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        burger.classList.remove('active');
-        document.body.style.overflow = '';
+// Fermer le menu avec la touche Echap
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        toggleMenu();
     }
 });
 
