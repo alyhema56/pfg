@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galerie - Festival des Grouilleurs</title>
+    <title>Contact - Festival des Grouilleurs</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,9 +14,9 @@
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="programme.html">Programme</a></li>
-                <li><a href="galerie.html" class="active">Galerie</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
                 <li><a href="a-propos.html">À propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
             <div class="burger">
                 <div></div>
@@ -27,59 +27,56 @@
     </header>
 
     <section class="hero" style="padding: 50px 32px;">
-        <span class="badge">Souvenirs</span>
-        <h1>Notre <span>galerie</span></h1>
-        <p>Revivez les moments forts des éditions passées à travers photos et vidéos.</p>
+        <span class="badge">Écrivez-nous</span>
+        <h1>Nous <span>contacter</span></h1>
+        <p>Une question ? Une envie de participer ? Notre équipe est à votre écoute.</p>
     </section>
 
     <main class="container">
 
-        <div class="card">
-            <h2>Vidéos</h2>
-            <div class="grid-2">
-                <div class="media-card">
-                    <video controls poster="images/poster.jpg">
-                        <source src="videos/grouille.mp4" type="video/mp4">
-                    </video>
-                    <div class="caption">Édition 2024 — Gaoua</div>
-                </div>
-                <div class="media-card">
-                    <video controls>
-                        <source src="images/video2.mp4" type="video/mp4">
-                    </video>
-                    <div class="caption">Temps forts du festival</div>
-                </div>
-            </div>
-        </div>
+        <div class="grid-2">
 
-        <div class="card">
-            <h2>Photos</h2>
-            <div class="grid-3">
-                <div class="media-card">
-                    <img src="images/discours.jpg" alt="Scène principale du festival">
-                    <div class="caption">Scène principale</div>
-                </div>
-                <div class="media-card">
-                    <img src="images/photo2.jpg" alt="Public en liesse">
-                    <div class="caption">Public en liesse</div>
-                </div>
-                <div class="media-card">
-                    <img src="images/photo3.jpg" alt="Artistes sur scène">
-                    <div class="caption">Artistes sur scène</div>
-                </div>
-                <div class="media-card">
-                    <img src="images/photo4.jpg" alt="Danse traditionnelle">
-                    <div class="caption">Danse traditionnelle</div>
-                </div>
-                <div class="media-card">
-                    <img src="images/photo5.jpg" alt="Ambiance nocturne">
-                    <div class="caption">Ambiance nocturne</div>
-                </div>
-                <div class="media-card">
-                    <img src="images/photo6.jpg" alt="Édition 2024">
-                    <div class="caption">Édition 2024</div>
-                </div>
+            <div class="card">
+                <h2>Envoyez-nous un message</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nom">Nom complet</label>
+                        <input type="text" id="nom" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Votre message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
             </div>
+
+            <div>
+
+                <div class="card">
+                    <h2>Nous trouver</h2>
+                    <p><strong>Gaoua</strong> — Place de la Nation</p>
+                    <p><strong>Batié</strong> — Lieu à venir</p>
+                    <p style="margin-top: 16px; color: var(--orange);">
+                        <a href="mailto:contact@grouilleurs.com" style="color: var(--orange);">contact@grouilleurs.com</a>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2>Suivez-nous</h2>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="#" style="padding: 10px 22px; background: var(--blanc-casse); border-radius: 30px; color: var(--gris-moyen); font-weight: 500; transition: var(--transition);">Facebook</a>
+                        <a href="#" style="padding: 10px 22px; background: var(--blanc-casse); border-radius: 30px; color: var(--gris-moyen); font-weight: 500; transition: var(--transition);">Instagram</a>
+                        <a href="#" style="padding: 10px 22px; background: var(--blanc-casse); border-radius: 30px; color: var(--gris-moyen); font-weight: 500; transition: var(--transition);">YouTube</a>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </main>
@@ -87,7 +84,7 @@
     <footer>
         <div class="footer-links">
             <a href="index.html">Accueil</a>
-            <a href="programme.html">Programme</a>
+            <a h ref="programme.html">Programme</a>
             <a href="galerie.html">Galerie</a>
             <a href="a-propos.html">À propos</a>
             <a href="contact.html">Contact</a>
