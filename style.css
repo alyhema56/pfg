@@ -1,113 +1,752 @@
-// ============================================
-// FESTIVAL DES GROUILLEURS - SCRIPT PRO
-// ============================================
+/* ============================================
+   FESTIVAL DES GROUILLEURS - STYLE PRO
+   Palette harmonieuse - Design épuré
+   ============================================ */
 
-// ===== 1. MENU BURGER =====
-const burger = document.querySelector('.burger');
-const navLinks = document.querySelector('.nav-links');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
 
-if (burger) {
-    burger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        burger.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-    });
+:root {
+    --orange: #D4783C;
+    --orange-fonce: #B8632A;
+    --orange-clair: #E8A050;
+    --rouge: #C0392B;
+    --jaune: #E8A838;
+    --noir: #0D0D0D;
+    --gris-fonce: #1A1A1A;
+    --gris-moyen: #2C2C2C;
+    --gris-clair: #4A4A4A;
+    --gris-texte: #cfcfc4;
+    --blanc: #FFFFFF;
+    --blanc-casse: #F5F0EB;
+    --shadow: 0 4px 24px rgba(143, 48, 48, 0.12);
+    --shadow-hover: 0 8px 40px rgba(0,0,0,0.20);
+    --radius: 12px;
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-document.querySelectorAll('.nav-links li a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        burger.classList.remove('active');
-        document.body.style.overflow = '';
-    });
-});
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-document.addEventListener('click', (e) => {
-    const nav = document.querySelector('nav');
-    if (nav && !nav.contains(e.target) && navLinks.classList.contains('active')) {
-        navLinks.classList.remove('active');
-        burger.classList.remove('active');
-        document.body.style.overflow = '';
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--noir);
+    color: var(--blanc);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--blanc);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--orange);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--orange-fonce);
+}
+
+/* ============================================
+   HEADER / NAVIGATION
+   ============================================ */
+header {
+    background: rgba(97, 37, 2, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(190, 83, 11, 0.15);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition);
+    min-height: 68px;
+}
+
+header.scrolled {
+    background: rgba(13, 13, 13, 0.98);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    color: var(--orange);
+}
+
+.logo span {
+    color: var(--blanc);
+    font-weight: 300;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-links li a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 18px;
+    color: var(--gris-texte);
+    border-radius: 6px;
+    transition: var(--transition);
+    letter-spacing: 0.3px;
+    position: relative;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--orange);
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.nav-links li a:hover {
+    color: var(--blanc);
+}
+
+.nav-links li a:hover::after {
+    width: 50%;
+}
+
+.nav-links li a.active {
+    color: var(--blanc);
+}
+
+.nav-links li a.active::after {
+    width: 50%;
+}
+
+/* ===== BURGER ===== */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.burger div {
+    width: 24px;
+    height: 2px;
+    background: var(--blanc);
+    margin: 3px 0;
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.burger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.active div:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.burger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ============================================
+   HERO BANNER
+   ============================================ */
+.hero {
+    background: linear-gradient(160deg, var(--noir) 0%, var(--gris-fonce) 40%, var(--gris-moyen) 70%, var(--noir) 100%);
+    padding: 80px 32px 64px;
+    text-align: center;
+    border-bottom: 1px solid rgba(212, 120, 60, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 120, 60, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero .badge {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--blanc);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 4px 18px;
+    border-radius: 30px;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--blanc);
+    margin-bottom: 4px;
+}
+
+.hero h1 span {
+    color: var(--orange);
+}
+
+.hero .sous-titre {
+    font-size: 1rem;
+    color: var(--orange-clair);
+    letter-spacing: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.hero .date {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--blanc);
+    margin-bottom: 4px;
+}
+
+.hero .lieu {
+    font-size: 1.1rem;
+    color: var(--gris-texte);
+    margin-bottom: 20px;
+}
+
+.hero .lieu strong {
+    color: var(--orange);
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    max-width: 560px;
+    margin: 0 auto 28px;
+    color: var(--gris-texte);
+}
+
+.hero .btn {
+    font-size: 0.9rem;
+    padding: 13px 40px;
+}
+
+/* ============================================
+   BOUTONS
+   ============================================ */
+.btn {
+    display: inline-block;
+    background: var(--orange);
+    color: var(--blanc);
+    padding: 13px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(212, 120, 60, 0.25);
+}
+
+.btn:hover {
+    background: var(--orange-fonce);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(212, 120, 60, 0.35);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background: var(--orange);
+    color: var(--blanc);
+    box-shadow: 0 8px 32px rgba(212, 120, 60, 0.25);
+}
+
+/* ============================================
+   CONTAINER & CARTES
+   ============================================ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 56px 32px;
+}
+
+.card {
+    background: var(--gris);
+    border: 1px solid rgba(117, 52, 52, 0.04);
+    border-radius: var(--radius);
+    padding: 30px 34px;
+    margin-bottom: 24px;
+    transition: var(--transition);
+}
+
+.card:hover {
+    border-color: rgba(192, 188, 185, 0.15);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--blanc);
+    margin-bottom: 14px;
+}
+
+.card h2 .accent {
+    color: var(--orange);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--blanc);
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: var(--gris-texte);
+}
+
+.card ul li {
+    padding: 5px 0;
+    color: var(--gris-texte);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.card ul li:last-child {
+    border-bottom: none;
+}
+
+/* ============================================
+   GRILLES
+   ============================================ */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* ============================================
+   MÉDIAS
+   ============================================ */
+.media-card {
+    background: var(--gris-moyen);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.04);
+    transition: var(--transition);
+}
+
+.media-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 120, 60, 0.2);
+    box-shadow: var(--shadow-hover);
+}
+
+.media-card img,
+.media-card video {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.media-card .caption {
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    color: var(--gris-texte);
+    text-align: center;
+    background: var(--gris-fonce);
+}
+
+/* ============================================
+   TÉMOIGNAGES
+   ============================================ */
+.temoignage {
+    background: rgba(255,255,255,0.02);
+    border-left: 3px solid var(--orange);
+    padding: 18px 22px;
+    border-radius: 4px;
+    margin: 14px 0;
+    transition: var(--transition);
+}
+
+.temoignage:hover {
+    background: rgba(255,255,255,0.04);
+}
+
+.temoignage p {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--gris-texte);
+}
+
+.temoignage .auteur {
+    color: var(--orange);
+    font-weight: 600;
+    margin-top: 6px;
+    font-style: normal;
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   FORMULAIRE
+   ============================================ */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: var(--blanc);
+    font-size: 0.85rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 11px 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    color: var(--blanc);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--gris-texte);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--orange);
+    background: rgba(255,255,255,0.06);
+    box-shadow: 0 0 0 3px rgba(212, 120, 60, 0.08);
+}
+
+.form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* ============================================
+   STATS
+   ============================================ */
+.stat {
+    text-align: center;
+    padding: 12px;
+}
+
+.stat .nombre {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: var(--orange);
+    display: block;
+    line-height: 1.2;
+}
+
+.stat .label {
+    font-size: 0.9rem;
+    color: var(--gris-texte);
+    margin-top: 4px;
+    display: block;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    background: var(--noir);
+    border-top: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+    padding: 36px 32px;
+    color: var(--gris-texte);
+    margin-top: 16px;
+}
+
+footer .highlight {
+    color: var(--orange);
+    font-weight: 600;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin: 14px 0 12px;
+    flex-wrap: wrap;
+}
+
+footer .footer-links a {
+    font-size: 0.8rem;
+    color: var(--gris-texte);
+    transition: var(--transition);
+}
+
+footer .footer-links a:hover {
+    color: var(--orange);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.8rem;
     }
-});
+}
 
-// ===== 2. HEADER SCROLL =====
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 40) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+@media (max-width: 900px) {
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
     }
-});
 
-// ===== 3. ANIMATIONS AU SCROLL =====
-const animatedElements = document.querySelectorAll('.card, .media-card, .temoignage, .stat');
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2px;
+        padding: 14px 0 8px;
+        border-top: 1px solid rgba(255,255,255,0.04);
+        margin-top: 8px;
+        background: var(--noir);
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 20px 32px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            setTimeout(() => {
-                entry.target.classList.add('visible');
-                entry.target.classList.remove('hidden');
-            }, index * 60);
-        }
-    });
-}, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -20px 0px'
-});
+    .nav-links.active {
+        display: flex;
+    }
 
-animatedElements.forEach(el => {
-    el.classList.add('hidden');
-    observer.observe(el);
-});
+    .nav-links li a {
+        display: block;
+        padding: 12px 16px;
+        text-align: center;
+        border-radius: 6px;
+        font-size: 0.9rem;
+    }
 
-const styleSheet = document.createElement('style');
-styleSheet.textContent = `
-    .hidden {
+    .nav-links li a::after {
+        display: none;
+    }
+
+    .nav-links li a.active {
+        background: var(--orange);
+        color: var(--blanc);
+    }
+
+    .nav-links li a:hover {
+        background: rgba(255,255,255,0.04);
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .hero {
+        padding: 50px 20px 40px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero .date {
+        font-size: 1.3rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .card {
+        padding: 22px 18px;
+    }
+
+    .card h2 {
+        font-size: 1.2rem;
+    }
+
+    .media-card img,
+    .media-card video {
+        height: 170px;
+    }
+
+    .stat .nombre {
+        font-size: 2rem;
+    }
+
+    footer .footer-links {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0 16px;
+        height: 56px;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        letter-spacing: -0.5px;
+    }
+
+    .hero .date {
+        font-size: 1.1rem;
+    }
+
+    .hero .sous-titre {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+
+    .hero .lieu {
+        font-size: 0.95rem;
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+    }
+
+    .container {
+        padding: 24px 14px;
+    }
+
+    .card {
+        padding: 16px 14px;
+    }
+
+    .card h2 {
+        font-size: 1rem;
+    }
+
+    .media-card img,
+    .media-card video {
+        height: 130px;
+    }
+
+    .btn {
+        padding: 10px 24px;
+        font-size: 0.8rem;
+    }
+
+    .stat .nombre {
+        font-size: 1.6rem;
+    }
+
+    .hero .btn {
+        padding: 11px 24px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeInUp {
+    from {
         opacity: 0;
         transform: translateY(24px);
-        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .visible {
+    to {
         opacity: 1;
         transform: translateY(0);
-        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-`;
-document.head.appendChild(styleSheet);
-
-// ===== 4. FORMULAIRE =====
-const form = document.querySelector('form');
-if (form) {
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const nom = document.getElementById('nom')?.value || '';
-        const email = document.getElementById('email')?.value || '';
-        const message = document.getElementById('message')?.value || '';
-        
-        if (!nom || !email || !message) {
-            alert('Veuillez remplir tous les champs.');
-            return;
-        }
-        
-        const btn = form.querySelector('.btn');
-        const originalText = btn.textContent;
-        btn.textContent = 'Envoi en cours...';
-        btn.disabled = true;
-        
-        setTimeout(() => {
-            alert('Votre message a été envoyé avec succès !');
-            form.reset();
-            btn.textContent = originalText;
-            btn.disabled = false;
-        }, 1200);
-    });
 }
 
-// ===== 5. CONSOLE =====
-console.log('%c Festival des Grouilleurs ', 'background: #D4783C; color: #0D0D0D; font-weight: 800; font-size: 14px; padding: 6px 14px; border-radius: 4px;');
-console.log('1ère Édition - Batié - Avril 2026');
+.hero .badge,
+.hero .sous-titre,
+.hero h1,
+.hero .date,
+.hero .lieu,
+.hero p,
+.hero .btn {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.hero .badge { animation-delay: 0.05s; }
+.hero .sous-titre { animation-delay: 0.1s; }
+.hero h1 { animation-delay: 0.2s; }
+.hero .date { animation-delay: 0.3s; }
+.hero .lieu { animation-delay: 0.4s; }
+.hero p { animation-delay: 0.5s; }
+.hero .btn { animation-delay: 0.6s; }
