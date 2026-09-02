@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>À propos - Festival des Grouilleurs</title>
+    <title>Contact - Festival des Grouilleurs</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,8 +15,8 @@
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="programme.html">Programme</a></li>
                 <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="a-propos.html" class="active">À propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="a-propos.html">À propos</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
             <div class="burger">
                 <div></div>
@@ -27,47 +27,56 @@
     </header>
 
     <section class="hero" style="padding: 50px 32px;">
-        <span class="badge">Notre histoire</span>
-        <h1>À <span>propos</span></h1>
-        <p>Découvrez l'histoire, les valeurs et les acteurs du Festival des Grouilleurs.</p>
+        <span class="badge">Écrivez-nous</span>
+        <h1>Nous <span>contacter</span></h1>
+        <p>Une question ? Une envie de participer ? Notre équipe est à votre écoute.</p>
     </section>
 
     <main class="container">
 
-        <div class="card">
-            <h2>Une histoire de passion et de culture</h2>
-            <p>
-                Le <strong>Festival des Grouilleurs</strong> a été créé en <strong>juin 2024</strong> par 
-                <strong>PRINCE M7</strong>, un jeune leader dévoué à sa région. L'objectif est de 
-                <strong>valoriser la culture burkinabè</strong> et d'offrir une vitrine aux artistes locaux.
-            </p>
-            <p style="margin-top: 12px;">
-                Dès sa première édition, le festival a rencontré un grand succès et rassemble aujourd'hui 
-                des milliers de festivaliers venus de tout le Burkina Faso et de Côte d'Ivoire.
-            </p>
-        </div>
-
         <div class="grid-2">
-            <div class="card">
-                <h3>Promoteur</h3>
-                <p style="font-weight: 600; font-size: 1.1rem;">PRINCE M7</p>
-                <p style="color: var(--blanc);">Jeune leader engagé pour le développement de la région du Djôrô.</p>
-            </div>
-            <div class="card">
-                <h3>Président du comité d'organisation</h3>
-                <p style="font-weight: 600; font-size: 1.1rem;">Ali HEMA</p>
-                <p style="color: var(--blanc);">Jeune engagé, satisfait des résultats et de la mobilisation.</p>
-            </div>
-        </div>
 
-        <div class="card">
-            <h2>Nos valeurs</h2>
-            <ul style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px;">
-                <li style="background: var(--gris-moyen); padding: 10px 24px; border-radius: 30px; color: var(--orange); font-weight: 500;">Valorisation culturelle</li>
-                <li style="background: var(--gris-moyen); padding: 10px 24px; border-radius: 30px; color: var(--orange); font-weight: 500;">Fraternité</li>
-                <li style="background: var(--gris-moyen); padding: 10px 24px; border-radius: 30px; color: var(--orange); font-weight: 500;">Art et tradition</li>
-                <li style="background: var(--gris-moyen); padding: 10px 24px; border-radius: 30px; color: var(--orange); font-weight: 500;">Jeunesse engagée</li>
-            </ul>
+            <div class="card">
+                <h2>Envoyez-nous un message</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nom">Nom complet</label>
+                        <input type="text" id="nom" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Votre message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Envoyer</button>
+                </form>
+            </div>
+
+            <div>
+
+                <div class="card">
+                    <h2>Nous trouver</h2>
+                    <p><strong>Gaoua</strong> — Place de la Nation</p>
+                    <p><strong>Batié</strong> — Lieu à venir</p>
+                    <p style="margin-top: 16px; color: var(--orange);">
+                        <a href="mailto:contact@grouilleurs.com" style="color: var(--orange);">contact@grouilleurs.com</a>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h2>Suivez-nous</h2>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                        <a href="#" style="padding: 10px 22px; background: var(--blanc-casse); border-radius: 30px; color: var(--gris-moyen); font-weight: 500; transition: var(--transition);">Facebook</a>
+                        <a href="#" style="padding: 10px 22px; background: var(--blanc-casse); border-radius: 30px; color: var(--gris-moyen); font-weight: 500; transition: var(--transition);">Instagram</a>
+                        <a href="#" style="padding: 10px 22px; background: var(--blanc-casse); border-radius: 30px; color: var(--gris-moyen); font-weight: 500; transition: var(--transition);">YouTube</a>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </main>
@@ -75,7 +84,7 @@
     <footer>
         <div class="footer-links">
             <a href="index.html">Accueil</a>
-            <a href="programme.html">Programme</a>
+            <a h ref="programme.html">Programme</a>
             <a href="galerie.html">Galerie</a>
             <a href="a-propos.html">À propos</a>
             <a href="contact.html">Contact</a>
