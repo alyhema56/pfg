@@ -169,6 +169,8 @@ nav {
     flex-direction: column;
     cursor: pointer;
     padding: 4px;
+    z-index: 1002;
+    position: relative;
 }
 
 .burger div {
@@ -233,7 +235,7 @@ nav {
     font-weight: 800;
     letter-spacing: -1px;
     color: var(--blanc);
-    margin-bottom: 4px;
+    margin-bottom: 8px;
 }
 
 .hero h1 span {
@@ -246,7 +248,7 @@ nav {
     letter-spacing: 3px;
     font-weight: 500;
     text-transform: uppercase;
-    margin-bottom: 4px;
+    margin-bottom: 0px;
 }
 
 .hero .date {
@@ -553,7 +555,42 @@ footer .footer-links a:hover {
 }
 
 /* ============================================
-   RESPONSIVE
+   OVERLAY MENU BURGER
+   ============================================ */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.nav-overlay.active {
+    display: block;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MENU BURGER STYLE BARAKA
    ============================================ */
 
 @media (max-width: 1024px) {
@@ -568,35 +605,42 @@ footer .footer-links a:hover {
         grid-template-columns: 1fr;
     }
 
+    /* ===== MENU BURGER STYLE BARAKA ===== */
     .nav-links {
         display: none;
-        width: 100%;
+        position: fixed;
+        top: 68px;
+        right: 16px;
+        width: 250px;
+        max-width: 80%;
+        background: var(--noir);
         flex-direction: column;
         align-items: stretch;
+        padding: 12px 16px;
         gap: 2px;
-        padding: 14px 0 8px;
-        border-top: 1px solid rgba(255,255,255,0.04);
-        margin-top: 8px;
-        background: var(--noir);
-        position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-        padding: 20px 32px;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        border: 1px solid rgba(212, 120, 60, 0.15);
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+        z-index: 1001;
+        overflow: visible;
+        max-height: none;
     }
 
     .nav-links.active {
         display: flex;
+        animation: fadeIn 0.25s ease forwards;
     }
 
     .nav-links li a {
         display: block;
-        padding: 12px 16px;
-        text-align: center;
+        padding: 10px 14px;
+        text-align: left;
         border-radius: 6px;
         font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--gris-texte);
+        transition: var(--transition);
+        border-bottom: 1px solid rgba(255,255,255,0.04);
     }
 
     .nav-links li a::after {
@@ -609,7 +653,12 @@ footer .footer-links a:hover {
     }
 
     .nav-links li a:hover {
-        background: rgba(255,255,255,0.04);
+        background: rgba(255,255,255,0.05);
+        color: var(--blanc);
+    }
+
+    .nav-links li:last-child a {
+        border-bottom: none;
     }
 
     .burger {
@@ -664,6 +713,18 @@ footer .footer-links a:hover {
         font-size: 1rem;
     }
 
+    .nav-links {
+        top: 56px;
+        right: 10px;
+        width: 200px;
+        padding: 10px 12px;
+    }
+
+    .nav-links li a {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
     .hero h1 {
         font-size: 1.8rem;
         letter-spacing: -0.5px;
@@ -713,7 +774,7 @@ footer .footer-links a:hover {
     }
 
     .hero .btn {
-        padding: 15px 24px;
+        padding: 11px 24px;
         font-size: 0.8rem;
     }
 }
