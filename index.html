@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Festival des Grouilleurs - 1ère édition à Batié, Burkina Faso. Du 16 au 19 avril 2026.">
+    <meta name="description" content="Festival des Grouilleurs - 1ère édition à Gaoua et Batié, Burkina Faso. Un événement culturel unique pour célébrer les traditions du sud-ouest burkinabè.">
     <title>Festival des Grouilleurs | 1ère Édition</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- ===== HEADER ===== -->
     <header>
         <nav>
             <div class="logo">GROUILLEURS <span>·</span> FESTIVAL</div>
@@ -27,18 +28,22 @@
         </nav>
     </header>
 
+    <!-- ===== HERO ===== -->
     <section class="hero">
         <span class="badge">1ère Édition</span>
         <p class="sous-titre">Festival des</p>
         <h1><span>Grouilleurs</span> du Djôrô</h1>
-        <p class="date"> Février et Mars de chaque année</p>
-        <p class="lieu"><strong>GAOUA-BATIÉ</strong></p>
+        <p class="date">Février et Mars de chaque année</p>
+        <p class="lieu"><strong>GAOUA</strong> — Place de la Nation</p>
+        <p class="lieu" style="margin-top: -8px;"><strong>BATIÉ</strong> — Lieu à venir</p>
         <p>Un rendez-vous culturel unique pour célébrer les traditions du sud-ouest burkinabè.</p>
         <a href="programme.html" class="btn">Découvrir le programme</a>
     </section>
 
+    <!-- ===== CONTENU PRINCIPAL ===== -->
     <main class="container">
 
+        <!-- === Infos pratiques === -->
         <div class="card" style="text-align: center;">
             <h2>Infos <span class="accent">pratiques</span></h2>
             <div style="display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; margin-top: 12px;">
@@ -57,12 +62,27 @@
             </div>
         </div>
 
+        <!-- === À propos du festival === -->
         <div class="card">
-             <div class="grid-2">
+            <h2>À propos du <span class="accent">festival</span></h2>
+            <p>
+                Le <strong>Festival des Grouilleurs</strong> est un événement culturel majeur de la région du Djôrô. 
+                Il a pour vocation de <strong>valoriser les traditions</strong>, la musique, la danse et l'artisanat 
+                du sud-ouest burkinabè.
+            </p>
+            <p style="margin-top: 10px;">
+                Porté par le promoteur <strong>PRINCE M7</strong> et organisé par un comité dirigé par 
+                <strong>Ali HEMA</strong>, le festival rassemble chaque année des artistes, des comédiens 
+                et des festivaliers venus de tout le Burkina Faso et de Côte d'Ivoire.
+            </p>
+        </div>
+
+        <!-- === Chiffres clés === -->
+        <div class="grid-2">
             <div class="card" style="text-align: center;">
                 <div class="stat">
                     <span class="nombre">2024</span>
-                    <span class="label">Année de la 1ère édition</span>
+                    <span class="label">Année de création</span>
                 </div>
             </div>
             <div class="card" style="text-align: center;">
@@ -73,32 +93,58 @@
             </div>
         </div>
 
-            <h2>Témoignages</h2>
+        <!-- === Les deux villes === -->
+        <div class="card">
+            <h2>Deux villes, une <span class="accent">même fête</span></h2>
+            <p>Le festival se déroule simultanément dans deux localités de la région du Djôrô :</p>
+            <ul style="margin-top: 12px; display: flex; gap: 20px; flex-wrap: wrap;">
+                <li style="background: var(--gris-800); padding: 12px 24px; border-radius: 30px; font-weight: 500; color: var(--orange);">
+                    📍 Gaoua — Place de la Nation
+                </li>
+                <li style="background: var(--gris-800); padding: 12px 24px; border-radius: 30px; font-weight: 500; color: var(--orange);">
+                    📍 Batié — Lieu à venir
+                </li>
+            </ul>
+        </div>
+
+        <!-- === Témoignages === -->
+        <div class="card">
+            <h2>Ils en <span class="accent">parlent</span></h2>
 
             <div class="temoignage">
                 <p>"Un événement qui met enfin en lumière les talents du sud-ouest. L'ambiance est électrique et la ferveur du public est incroyable."</p>
-                <p class="auteur">— Pooda Vipèdibè</p>
+                <p class="auteur">— Pooda Vipèdibè, festivalier</p>
             </div>
 
             <div class="temoignage">
                 <p>"Le Festival des Grouilleurs est bien plus qu'un simple spectacle. C'est une célébration de notre identité et de notre culture."</p>
-                <p class="auteur">— Kambou Nestor</p>
+                <p class="auteur">— Kambou Nestor, artiste invité</p>
             </div>
 
             <div class="temoignage">
                 <p>"Je suis fier de voir notre région vibrer au rythme des Grouilleurs. Ce festival redonne espoir à toute une génération."</p>
-                <p class="auteur">— Da Sié</p>
+                <p class="auteur">— Da Sié, habitant de Gaoua</p>
             </div>
 
             <div class="temoignage">
                 <p>"Une organisation exemplaire et des moments de partage inoubliables. Le festival est déjà dans les cœurs de tous."</p>
-                <p class="auteur">— Dabiré Y</p>
+                <p class="auteur">— Dabiré Y, membre du comité</p>
             </div>
         </div>
 
-       
+        <!-- === Appel à l'action === -->
+        <div class="card" style="text-align: center; border: 1px solid rgba(212, 120, 60, 0.15);">
+            <h2>Participez à <span class="accent">l'aventure</span></h2>
+            <p style="max-width: 500px; margin: 0 auto;">
+                Vous souhaitez exposer, participer ou simplement vivre l'expérience du Festival des Grouilleurs ?
+                Contactez-nous dès maintenant !
+            </p>
+            <a href="contact.html" class="btn" style="margin-top: 16px;">Nous contacter</a>
+        </div>
+
     </main>
 
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="footer-links">
             <a href="index.html">Accueil</a>
@@ -107,11 +153,11 @@
             <a href="a-propos.html">À propos</a>
             <a href="contact.html">Contact</a>
         </div>
-        <p>&copy; 2026 <span class="highlight">Festival des Grouilleurs</span> — 1ère Édition — Batié</p>
+        <p>&copy; 2026 <span class="highlight">Festival des Grouilleurs</span> — 1ère Édition — Gaoua & Batié</p>
         <p style="font-size: 0.75rem; margin-top: 4px; opacity: 0.5;">Organisé par le comité dirigé par Ali HEMA</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
