@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- ===== HEADER / NAVIGATION ===== -->
     <header>
         <nav>
             <div class="logo">GROUILLEURS <span>·</span> FESTIVAL</div>
@@ -27,93 +26,84 @@
         </nav>
     </header>
 
-    <!-- ===== BANNIÈRE ===== -->
-    <section class="hero" style="padding: 50px 24px;">
-        <p class="sous-titre">📸</p>
-        <h1>Notre <span>Galerie</span></h1>
-        <p>Photos et vidéos des éditions passées</p>
+    <section class="hero" style="padding: 50px 32px;">
+        <span class="badge">Souvenirs</span>
+        <h1>Notre <span>galerie</span></h1>
+        <p>Revivez les moments forts des éditions passées à travers photos et vidéos.</p>
     </section>
 
-    <!-- ===== CONTENU PRINCIPAL ===== -->
     <main class="container">
 
-        <!-- ===== SECTION VIDÉOS ===== -->
         <div class="card">
-            <h2>🎬 Vidéos</h2>
+            <h2>Vidéos</h2>
             <div class="grid-2">
                 <div class="media-card">
                     <video controls poster="images/poster.jpg">
-                        <source src="images/video1.mp4" type="video/mp4">
-                        Ton navigateur ne supporte pas la vidéo.
+                        <source src="videos/grouille.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
                     </video>
                     <div class="caption">Édition 2024 — Gaoua</div>
                 </div>
                 <div class="media-card">
                     <video controls>
                         <source src="images/video2.mp4" type="video/mp4">
-                        Ton navigateur ne supporte pas la vidéo.
+                        Votre navigateur ne supporte pas la vidéo.
                     </video>
                     <div class="caption">Temps forts du festival</div>
                 </div>
             </div>
-            <p style="margin-top: 16px; opacity: 0.6; font-size: 0.9rem;">
-                💡 Pour ajouter une vidéo : dépose ton fichier dans le dossier <code>images/</code> et remplace <code>images/video1.mp4</code> par le bon nom.
+            <p style="margin-top: 16px; color: var(--gris-clair); font-size: 0.9rem;">
+                Pour ajouter une vidéo : déposez votre fichier dans le dossier <code style="background: var(--blanc-casse); padding: 2px 8px; border-radius: 4px;">images/</code> et remplacez <code style="background: var(--blanc-casse); padding: 2px 8px; border-radius: 4px;">video1.mp4</code> par le bon nom.
             </p>
         </div>
 
-        <!-- ===== SECTION PHOTOS ===== -->
         <div class="card">
-            <h2>📷 Photos</h2>
+            <h2>Photos</h2>
             <div class="grid-3">
                 <div class="media-card">
-                    <img src="images/photo1.jpg" alt="Festival des Grouilleurs - Scène principale">
+                    <img src="images/discours.jpg" alt="Scène principale du festival">
                     <div class="caption">Scène principale</div>
                 </div>
                 <div class="media-card">
-                    <img src="images/photo2.jpg" alt="Festival des Grouilleurs - Public">
+                    <img src="images/photo2.jpg" alt="Public en liesse">
                     <div class="caption">Public en liesse</div>
                 </div>
                 <div class="media-card">
-                    <img src="images/photo3.jpg" alt="Festival des Grouilleurs - Artistes">
+                    <img src="images/photo3.jpg" alt="Artistes sur scène">
                     <div class="caption">Artistes sur scène</div>
                 </div>
                 <div class="media-card">
-                    <img src="images/photo4.jpg" alt="Festival des Grouilleurs - Danse">
+                    <img src="images/photo4.jpg" alt="Danse traditionnelle">
                     <div class="caption">Danse traditionnelle</div>
                 </div>
                 <div class="media-card">
-                    <img src="images/photo5.jpg" alt="Festival des Grouilleurs - Ambiance">
+                    <img src="images/photo5.jpg" alt="Ambiance nocturne">
                     <div class="caption">Ambiance nocturne</div>
                 </div>
                 <div class="media-card">
-                    <img src="images/photo6.jpg" alt="Festival des Grouilleurs - Édition 2024">
+                    <img src="images/photo6.jpg" alt="Édition 2024">
                     <div class="caption">Édition 2024</div>
                 </div>
             </div>
-            <p style="margin-top: 16px; opacity: 0.6; font-size: 0.9rem;">
-                💡 Pour ajouter une photo : dépose ton fichier dans le dossier <code>images/</code> et remplace <code>images/photo1.jpg</code> par le bon nom.
+            <p style="margin-top: 16px; color: var(--gris-clair); font-size: 0.9rem;">
+                Pour ajouter une photo : déposez votre fichier dans le dossier <code style="background: var(--blanc-casse); padding: 2px 8px; border-radius: 4px;">images/</code> et remplacez <code style="background: var(--blanc-casse); padding: 2px 8px; border-radius: 4px;">photo1.jpg</code> par le bon nom.
             </p>
         </div>
 
-        <!-- ===== SECTION PLACEHOLDER (si pas d'images) ===== -->
-        <div class="card" style="text-align: center; border: 2px dashed rgba(184,115,51,0.3);">
-            <h2>🖼️ Tu n'as pas encore d'images ?</h2>
-            <p style="opacity: 0.7;">
-                Crée un dossier <code>images/</code> à côté de tes pages HTML et ajoute tes photos et vidéos.
-            </p>
-            <p style="opacity: 0.7; margin-top: 8px;">
-                Les noms attendus sont : <code>photo1.jpg</code>, <code>photo2.jpg</code>, <code>video1.mp4</code>, etc.
+        <div class="card" style="text-align: center; border: 2px dashed var(--gris-tres-clair);">
+            <h2 style="color: var(--gris-moyen); font-weight: 400;">Vous n'avez pas encore d'images ?</h2>
+            <p style="color: var(--gris-clair);">
+                Créez un dossier <code style="background: var(--blanc-casse); padding: 2px 8px; border-radius: 4px;">images/</code> à côté de vos pages HTML et ajoutez vos photos et vidéos.
             </p>
             <div style="margin-top: 16px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                <span style="background: rgba(184,115,51,0.15); padding: 8px 16px; border-radius: 8px; font-size: 0.85rem;">📁 images/photo1.jpg</span>
-                <span style="background: rgba(184,115,51,0.15); padding: 8px 16px; border-radius: 8px; font-size: 0.85rem;">📁 images/photo2.jpg</span>
-                <span style="background: rgba(184,115,51,0.15); padding: 8px 16px; border-radius: 8px; font-size: 0.85rem;">📁 images/video1.mp4</span>
+                <span style="background: var(--blanc-casse); padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; color: var(--gris-moyen);">images/photo1.jpg</span>
+                <span style="background: var(--blanc-casse); padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; color: var(--gris-moyen);">images/photo2.jpg</span>
+                <span style="background: var(--blanc-casse); padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; color: var(--gris-moyen);">images/video1.mp4</span>
             </div>
         </div>
 
     </main>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="footer-links">
             <a href="index.html">Accueil</a>
@@ -123,7 +113,6 @@
             <a href="contact.html">Contact</a>
         </div>
         <p>&copy; 2026 <span class="highlight">Festival des Grouilleurs</span> — Gaoua, Burkina Faso</p>
-        <p style="font-size: 0.8rem; margin-top: 4px; opacity: 0.6;">Organisé par le Comité dirigé par Ali HEMA</p>
     </footer>
 
     <script src="script.js"></script>
